@@ -1,4 +1,7 @@
 {
   "name": "ts-esm-package-sandbox",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "prettier": "^2.8.3"
+  }
 }
