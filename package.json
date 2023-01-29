@@ -13,7 +13,7 @@
     "build:tsup": "tsup",
     "build:tsc-cjs": "tsc --project tsconfig.cjs.json",
     "build:packemon": "packemon build",
-    "pack": "packemon pack --addEngines --addFiles --declaration"
+    "pack": "packemon pack --addEngines --addFiles --declaration --addExports"
   },
   "dependencies": {
     "@quramy/prisma-fabbrica": "^1.0.1"
@@ -45,5 +45,21 @@
   "engines": {
     "node": ">=14.15.0",
     "npm": ">=6.14.0"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "browser": {
+        "module": "./esm/index.js",
+        "import": "./esm/index.js",
+        "default": "./lib/index.js"
+      },
+      "node": {
+        "import": "./cjs/index-wrapper.mjs",
+        "require": "./cjs/index.cjs"
+      },
+      "default": "./lib/index.js"
+    }
   }
 }
