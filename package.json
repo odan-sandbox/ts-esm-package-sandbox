@@ -29,6 +29,10 @@
     {
       "format": "cjs",
       "platform": "node"
+    },
+    {
+      "format": "umd",
+      "platform": "browser"
     }
   ],
   "main": "./cjs/index.cjs",
@@ -39,7 +43,8 @@
     "esm/**/*.{js,map}",
     "lib/**/*.{js,map}",
     "mjs/**/*.{mjs,map}",
-    "src/**/*.{ts,tsx,json}"
+    "src/**/*.{ts,tsx,json}",
+    "umd/**/*.{js,map}"
   ],
   "types": "./dts/index.d.ts",
   "engines": {
@@ -50,16 +55,13 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./dts/index.d.ts",
-      "browser": {
-        "module": "./esm/index.js",
-        "import": "./esm/index.js",
-        "default": "./lib/index.js"
-      },
+      "browser": "./umd/index.js",
       "node": {
         "import": "./cjs/index-wrapper.mjs",
         "require": "./cjs/index.cjs"
       },
       "default": "./lib/index.js"
     }
-  }
+  },
+  "browser": "./umd/index.js"
 }
