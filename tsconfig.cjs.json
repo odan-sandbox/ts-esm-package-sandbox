@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "./dist-cjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"]
+}
