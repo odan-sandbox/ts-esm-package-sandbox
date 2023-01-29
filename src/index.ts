@@ -1,1 +1,1 @@
-export { add } from "./bar.mjs";
+export { add } from "./bar.js";

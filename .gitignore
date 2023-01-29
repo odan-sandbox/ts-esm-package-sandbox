@@ -131,3 +131,9 @@ dist
 
 dist-tsup
 dist-cjs
+
+cjs
+dts
+esm
+lib
+mjs

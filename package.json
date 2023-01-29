@@ -3,6 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
+    "packemon": "^2.4.1",
     "prettier": "^2.8.3",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
@@ -10,6 +11,39 @@
   "scripts": {
     "build:tsc": "tsc",
     "build:tsup": "tsup",
-    "build:tsc-cjs": "tsc --project tsconfig.cjs.json"
+    "build:tsc-cjs": "tsc --project tsconfig.cjs.json",
+    "build:packemon": "packemon build",
+    "pack": "packemon pack --addEngines --addFiles --declaration"
+  },
+  "dependencies": {
+    "@quramy/prisma-fabbrica": "^1.0.1"
+  },
+  "packemon": [
+    {
+      "format": "mjs",
+      "platform": [
+        "browser",
+        "node"
+      ]
+    },
+    {
+      "format": "cjs",
+      "platform": "node"
+    }
+  ],
+  "main": "./cjs/index.cjs",
+  "module": "./esm/index.js",
+  "files": [
+    "cjs/**/*.{cjs,mjs,map}",
+    "dts/**/*.d.ts",
+    "esm/**/*.{js,map}",
+    "lib/**/*.{js,map}",
+    "mjs/**/*.{mjs,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "types": "./dts/index.d.ts",
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.0"
   }
 }
